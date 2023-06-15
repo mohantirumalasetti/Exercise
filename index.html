@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Six-Month Exercise Plan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+    
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+      background-color: #ddd;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    .week-checkboxes {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .week-checkboxes input[type="checkbox"] {
+      margin-bottom: 5px;
+    }
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #000;
+}
+
+.week-checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.week-label {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.week-label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.week-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.week-label input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.week-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.week-label .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      
+      checkboxes.forEach((checkbox) => {
+        const checkboxData = localStorage.getItem(checkbox.id);
+        checkbox.checked = checkboxData === 'true';
+      });
+    });
+    function saveCheckboxState(checkbox) {
+      localStorage.setItem(checkbox.id, checkbox.checked);
+    }
+  </script>
+</head>
+<body>
+  <h1>Six-Month Exercise Plan</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Strength Training</th>
+        <th>Cardiovascular Exercise</th>
+        <th>Abdominal Exercises</th>
+        <th>weeks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Month 1</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Plank</td>
+                <td>3</td>
+                <td>Hold for 30 seconds each</td>
+              </tr>
+              <tr>
+                <td>Crunches</td>
+                <td>3</td>
+                <td>12 reps</td>
+              </tr>
+              <tr>
+                <td>Bicycle Crunches</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+              <tr>
+                <td>Russian Twists</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>30 minutes of moderate-intensity cardio exercises such as jogging, cycling, or swimming.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Perform exercises like plank, crunches, bicycle crunches, and Russian twists.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week1" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week2" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week3" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week4" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+      <tr>
+        <td>Month 2</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Side Plank</td>
+                <td>3</td>
+                <td>Hold for 30 seconds on each side</td>
+              </tr>
+              <tr>
+                <td>Reverse Crunches</td>
+                <td>3</td>
+                <td>12 reps</td>
+              </tr>
+              <tr>
+                <td>Leg Raises</td>
+                <td>3</td>
+                <td>10 reps</td>
+              </tr>
+              <tr>
+                <td>Mountain Climbers</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>30 minutes of moderate-intensity cardio exercises such as running, elliptical training, or rowing.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Continue with abdominal exercises like plank variations, leg raises, and seated Russian twists.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week5" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week6" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week7" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week8" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+      <tr>
+        <td>Month 3</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Weighted Plank</td>
+                <td>3</td>
+                <td>Hold for 45 seconds each</td>
+              </tr>
+              <tr>
+                <td>Crunches with Medicine Ball</td>
+                <td>3</td>
+                <td>12 reps</td>
+              </tr>
+              <tr>
+                <td>Toe Touches</td>
+                <td>3</td>
+                <td>10 reps</td>
+              </tr>
+              <tr>
+                <td>Oblique Twists</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>45 minutes of moderate-intensity or high-intensity cardio exercises such as HIIT workouts, cycling sprints, or stair climbing.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Incorporate more challenging exercises like hanging leg raises, reverse crunches, and side plank variations.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week9" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week10" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week11" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week12" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+      <tr>
+        <td>Month 4</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Plank with Knee Tucks</td>
+                <td>3</td>
+                <td>Hold for 45 seconds each</td>
+              </tr>
+              <tr>
+                <td>Flutter Kicks</td>
+                <td>3</td>
+                <td>12 reps on each leg</td>
+              </tr>
+              <tr>
+                <td>Vertical Leg Crunches</td>
+                <td>3</td>
+                <td>10 reps</td>
+              </tr>
+              <tr>
+                <td>Woodchoppers</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>60 minutes of varied cardio exercises such as running, swimming, jumping rope, or HIIT workouts.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Continue with advanced exercises like hanging windshield wipers, dragon flags, and weighted crunches.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week13" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week14" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week15" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week16" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+      <tr>
+        <td>Month 5</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Side Plank with Leg Lifts</td>
+                <td>3</td>
+                <td>Hold for 45 seconds on each side</td>
+              </tr>
+              <tr>
+                <td>Scissor Kicks</td>
+                <td>3</td>
+                <td>12 reps on each leg</td>
+              </tr>
+              <tr>
+                <td>Plank Twists</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+              <tr>
+                <td>Weighted Russian Twists</td>
+                <td>3</td>
+                <td>10 reps on each side</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>60 minutes of high-intensity cardio workouts like sprint intervals, circuit training, or kickboxing.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Incorporate advanced exercises such as hanging leg raises with twists, ab wheel rollouts, and plank variations with added weights.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week17" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week18" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week19" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week20" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+      <tr>
+        <td>Month 6</td>
+        <td>
+          <h2>Strength Training</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Exercise</th>
+                <th>Sets</th>
+                <th>Reps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Weighted Plank with Alternating Arm and Leg Lifts</td>
+                <td>3</td>
+                <td>Hold for 60 seconds</td>
+              </tr>
+              <tr>
+                <td>Jackknife Sit-ups</td>
+                <td>3</td>
+                <td>12 reps</td>
+              </tr>
+              <tr>
+                <td>Dragon Flags</td>
+                <td>3</td>
+                <td>10 reps</td>
+              </tr>
+              <tr>
+                <td>Weighted Cable Crunches</td>
+                <td>3</td>
+                <td>10 reps</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <h2>Cardiovascular Exercise</h2>
+          <p>60-75 minutes of mixed cardio workouts combining both high-intensity and steady-state exercises for maximum calorie burn.</p>
+        </td>
+        <td>
+          <h2>Abdominal Exercises</h2>
+          <p>Continue with challenging exercises like dragon flags, hanging leg raises with twists, and plank variations with added weights and stability challenges.</p>
+        </td>
+      </td>
+      <td class="week-checkboxes">
+        <label class="week-label">
+          <input type="checkbox" id="week21" name="week1" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 1
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week22" name="week2" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 2
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week23" name="week3" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 3
+        </label>
+
+        <label class="week-label">
+          <input type="checkbox" id="week24" name="week4" onchange="saveCheckboxState(this)">
+          <span class="checkmark"></span>
+          Week 4
+        </label>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
